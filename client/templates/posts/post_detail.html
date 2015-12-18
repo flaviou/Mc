@@ -1,0 +1,18 @@
+<template name="postDetail">
+  <div class="post">
+    <div class="post-content">
+      {{> adsense}}
+      <h1>{{title}}</h1>
+      {{> article}}
+      <span>{{{content}}}</span>
+      {{> postFooter}}
+    </div>
+  </div>
+<!--
+  <div>
+    {{#each getImages content }}
+      {{{this}}}
+    {{/each}}
+  </div>
+-->
+</template>

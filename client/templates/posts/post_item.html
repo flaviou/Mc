@@ -1,0 +1,14 @@
+<template name="postItem">
+  <div class="post">
+    <div class="post-content">
+      <h3><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{title}}</a></h3>
+      {{#if hasImages content}}
+        <div><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{{getFirstImage content}}}</a></div>
+      {{/if}}
+      <a href="{{pathFor 'postPage' blogid=this.blog.id }}" class="discuss btn btn-default">Leia mais...</a>
+      <span>Postado em <span class="date">{{formatDate published}}</span> por <span class="author">{{author.displayName}}</span> em <a href="http://{{domain url}}">{{domain url}}</a>.<br/>
+        <span>{{ getPostLabels labels }}</span>
+      </span>
+    </div>
+  </div>
+</template>

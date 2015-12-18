@@ -1,0 +1,12 @@
+<template name="postFooter">
+  <div>
+    <span>Postado por {{author.displayName}} em {{domain url}} em {{formatDate published}}. - <a href={{url}}>{{url}}</a>.</span>
+  </div>
+  <div>
+    <span>{{ getPostLabels labels }}</span>
+  </div>
+  <div> 
+    {{> adsense}}
+    <a class="load-more" href="javascript:history.back()">Voltar</a>
+  </div>
+</template>
