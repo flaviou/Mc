@@ -13,6 +13,13 @@ Template.adsense.events({
   }
 });
 
+Template.adsense.helpers({
+  refresh_template: function() {
+    return Session.get("refresh_template");
+  }
+});
+/*
 Template.adsense.refresh_template = function() {
   return Session.get("refresh_template");
 };
+*/

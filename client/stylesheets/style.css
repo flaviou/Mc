@@ -167,3 +167,19 @@ body {
   margin-bottom: 5px;
   pointer-events: auto;
 }
+
+.hidden_div{
+	display:none;
+}
+
+.label-as-badge {
+	padding-right: .6em;
+	padding-left: .6em;
+	border-radius: 10rem;
+	color: white;
+}
+
+.navbar-nav > li{
+  padding-left:10px;
+  padding-right:10px;
+}

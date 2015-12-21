@@ -1,5 +1,6 @@
 <template name="postsList">
   {{> yield region="ad"}}
+  {{> shareit}}
   <div class="posts">
     {{#each posts}}
       {{> postItem}}
@@ -13,5 +14,4 @@
       {{> spinner}}
     {{/unless}}
   {{/if}}
-  {{> shareit}}
 </template>

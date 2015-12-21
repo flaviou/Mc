@@ -1,6 +1,6 @@
 <template name="layout">
   <header class="navbar navbar-default" role="navigation"> 
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -41,6 +41,9 @@
           </li>
           <li><a href="https://twitter.com/morandonocanada">Follow Us <i class="fa fa-twitter fa-2x"></i></a></li>
           <li><a href="https://facebook.com/morandonocanada">Like Us <i class="fa fa-facebook-square fa-2x"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>{{> loginButtons}}</li>
         </ul>
       </div>
     </div>

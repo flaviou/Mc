@@ -44,7 +44,7 @@ Handlebars.registerHelper("getImages", function(html) {
 
 Handlebars.registerHelper("getPostLabels", function(labels) {
     var tags = "";
-    if (labels.length > 0) {
+    if ((labels) && (labels.length > 0)) {
       tags = "Tags: " + labels.join(", ");
     }
     return tags;
