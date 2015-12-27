@@ -12,6 +12,10 @@ Template.registerHelper("gh_user_full_name", function(userId) {
 	}
 });
 
+Template.registerHelper("gh_selected_user", function() {
+	return Session.get("selectedUser");
+});
+
 Template.registerHelper("gh_disabled", function()  {
 	if (Meteor.user()) {
 		return "";
@@ -50,3 +54,10 @@ Template.registerHelper("gh_show_warning", function() {
 	}
 });
 
+Template.registerHelper("isAdmin", function(classes) {
+	if (Meteor.user() && Roles.userIsInRole(Meteor.user(), 'admin')) {
+		return classes;
+	} else {
+		return classes + " sr-only";
+	}
+}); 

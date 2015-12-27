@@ -5,7 +5,7 @@
       {{#if hasImages content}}
         <div><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{{getFirstImage content}}}</a></div>
       {{/if}}
-      <span class="label-as-badge label-default">{{gh_upvote_count id}}</span>
+      Votos: <span class="label-as-badge label-default">{{gh_upvote_count id}}</span>
       <a href="#" class="btn btn-default js-upvote" data-toggle="popover" title="{{popup_msg}}" data-trigger="hover" {{gh_disabled}}>
         <span class="glyphicon glyphicon-thumbs-up"></span>
       </a>

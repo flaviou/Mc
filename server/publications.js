@@ -33,5 +33,16 @@ Meteor.publish('comments', function(){
 });
 
 Meteor.publish('users', function(){
-  return Meteor.users.find({},{fields: {'profile':1}});
+//  if (this.userId) {
+    if (Roles.userIsInRole(this.userId,['admin'])) {
+      return Meteor.users.find();
+    } else {
+      return Meteor.users.find({_id: this.userId});
+    }
+//  } else {
+//    this.stop();
+//    return {};
+//  }
+
+///  return Meteor.users.find();
 });
