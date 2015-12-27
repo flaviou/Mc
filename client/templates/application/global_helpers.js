@@ -1,6 +1,10 @@
 Template.registerHelper("gh_user_email", function(userId) {
 	var user = Meteor.users.findOne({_id: userId});
-	return user.emails[0].address;
+	if (user) {
+		return user.emails[0].address;
+	} else {
+		return'';
+	}
 });
 
 Template.registerHelper("gh_user_full_name", function(userId) {
@@ -53,11 +57,3 @@ Template.registerHelper("gh_show_warning", function() {
 		return "";
 	}
 });
-
-Template.registerHelper("isAdmin", function(classes) {
-	if (Meteor.user() && Roles.userIsInRole(Meteor.user(), 'admin')) {
-		return classes;
-	} else {
-		return classes + " sr-only";
-	}
-}); 

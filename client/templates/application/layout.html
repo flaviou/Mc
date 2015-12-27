@@ -39,12 +39,14 @@
               <li role="presentation"><a href="{{pathFor 'winnipegPosts'}}" role="menuitem">Winnipeg</a></li>
             </ul>
           </li>
-          <li class="{{isAdmin dropdown}}"  >
+{{#if isInRole 'admin'}}
+          <li class="dropdown">
             <a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Admin<b class="caret"></b></a>
             <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
               <li role="presentation"><a href="{{pathFor 'usersList'}}" role="menuitem">Users</a></li>
             </ul>
           </li>
+{{/if}}
           <li><a href="https://twitter.com/morandonocanada">Follow Us <i class="fa fa-twitter fa-2x"></i></a></li>
           <li><a href="https://facebook.com/morandonocanada">Like Us <i class="fa fa-facebook-square fa-2x"></i></a></li>
         </ul>
