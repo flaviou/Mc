@@ -16,7 +16,9 @@
     <fieldset>
       <legend>Edit User</legend>
         {{> afQuickField name="profile.full_name"}}
+{{#if isInRole 'admin'}}
         {{> afQuickField name="roles" options=roleOptions noselect=true type="select-checkbox-inline"}}
+{{/if}}
     </fieldset>
     <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
