@@ -26,6 +26,7 @@ Handlebars.registerHelper("getFirstImage", function(html) {
     var image = "";
     var images = div.getElementsByTagName("img");
     if (images.length > 0) {
+      images[0].setAttribute('class','img-responsive col-xs-12');
       image = images[0].outerHTML;
     }
     return image;

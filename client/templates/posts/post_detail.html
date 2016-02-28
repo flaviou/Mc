@@ -1,18 +1,11 @@
 <template name="postDetail">
   <div class="post">
-    <div class="post-content">
+    <div class="post-content col-xs-12">
       {{> adsense}}
       <h1>{{title}}</h1>
       {{> article}}
-      <span>{{{content}}}</span>
+      <span>{{{mContent}}}</span>
       {{> postFooter}}
     </div>
   </div>
-<!--
-  <div>
-    {{#each getImages content }}
-      {{{this}}}
-    {{/each}}
-  </div>
--->
 </template>

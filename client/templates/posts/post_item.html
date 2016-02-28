@@ -1,18 +1,24 @@
 <template name="postItem">
-  <div class="post">
-    <div class="post-content">
-      <h3><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{title}}</a></h3>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{title}}</a></h3>
+    </div>
+    <div class="panel-body">
       {{#if hasImages content}}
         <div><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{{getFirstImage content}}}</a></div>
       {{/if}}
+      <span>{{post_lead}}</span>
+      <a href="{{pathFor 'postPage' blogid=this.blog.id }}">
+        <button type="button" class="btn btn-primary">Leia mais...</button>
+      </a>
+    </div>
       Votos: <span class="label-as-badge label-default">{{gh_upvote_count id}}</span>
       <a href="#" class="btn btn-default js-upvote" data-toggle="popover" title="{{popup_msg}}" data-trigger="hover" {{gh_disabled}}>
         <span class="glyphicon glyphicon-thumbs-up"></span>
       </a>
-      <a href="{{pathFor 'postPage' blogid=this.blog.id }}" class="discuss btn btn-default">Leia mais...</a>
-      <span>Postado em <span class="date">{{formatDate published}}</span> por <span class="author">{{author.displayName}}</span> em <a href="http://{{domain url}}">{{domain url}}</a>.<br/>
         <span>{{ getPostLabels labels }}</span>
-      </span>
+    <div class="panel-footer">
+      <span>Postado em <span class="date">{{formatDate published}}</span> por <span class="author">{{author.displayName}}</span> em <a href="http://{{domain url}}">{{domain url}}</a></span>
     </div>
   </div>
 </template>

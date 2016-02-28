@@ -1,63 +1,8 @@
 <template name="layout">
-  <header class="navbar navbar-default" role="navigation"> 
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="{{pathFor 'home'}}">Morando no Canadá</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="{{pathFor 'tudoPosts'}}">Tudo</a>
-          </li>
-          <li>
-            <a href="{{pathFor 'imigrarPosts'}}">Imigrar</a>
-          </li>
-          <li>
-            <a href="{{pathFor 'estudarPosts'}}">Estudar</a>
-          </li>
-          <li>
-            <a href="{{pathFor 'viajarPosts'}}">Viajar</a>
-          </li>
-          <li class="dropdown">
-            <a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Cidades<b class="caret"></b></a>
-            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-              <li role="presentation"><a href="{{pathFor 'calgaryPosts'}}" role="menuitem">Calgary</a></li>
-              <li role="presentation"><a href="{{pathFor 'edmontonPosts'}}" role="menuitem">Edmonton</a></li>
-              <li role="presentation"><a href="{{pathFor 'halifaxPosts'}}" role="menuitem">Halifax</a></li>
-              <li role="presentation"><a href="{{pathFor 'montrealPosts'}}" role="menuitem">Montreal</a></li>
-              <li role="presentation"><a href="{{pathFor 'ottawaPosts'}}" role="menuitem">Ottawa</a></li>
-              <li role="presentation"><a href="{{pathFor 'reginaPosts'}}" role="menuitem">Regina</a></li>
-              <li role="presentation"><a href="{{pathFor 'saskatoonPosts'}}" role="menuitem">Saskatoon</a></li>
-              <li role="presentation"><a href="{{pathFor 'torontoPosts'}}" role="menuitem">Toronto</a></li>
-              <li role="presentation"><a href="{{pathFor 'vancouverPosts'}}" role="menuitem">Vancouver</a></li>
-              <li role="presentation"><a href="{{pathFor 'winnipegPosts'}}" role="menuitem">Winnipeg</a></li>
-            </ul>
-          </li>
-{{#if isInRole 'admin'}}
-          <li class="dropdown">
-            <a href="#" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Admin<b class="caret"></b></a>
-            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-              <li role="presentation"><a href="{{pathFor 'usersList'}}" role="menuitem">Users</a></li>
-            </ul>
-          </li>
-{{/if}}
-          <li><a href="https://twitter.com/morandonocanada">Follow Us <i class="fa fa-twitter fa-2x"></i></a></li>
-          <li><a href="https://facebook.com/morandonocanada">Like Us <i class="fa fa-facebook-square fa-2x"></i></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><p class="navbar-text">{{> loginButtons}}</p></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <div class="container">
-    <div id="main" class="row-fluid">
+  <div class="container-fluid">
+    {{> header}}
+    {{> errors}}
+    <div id="main">
       {{> yield}}
     </div>
   </div>
