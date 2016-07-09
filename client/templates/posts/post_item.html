@@ -4,21 +4,31 @@
       <h3 class="panel-title"><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{title}}</a></h3>
     </div>
     <div class="panel-body">
-      {{#if hasImages content}}
-        <div><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{{getFirstImage content}}}</a></div>
-      {{/if}}
-      <span>{{post_lead}}</span>
-      <a href="{{pathFor 'postPage' blogid=this.blog.id }}">
-        <button type="button" class="btn btn-primary">Leia mais...</button>
-      </a>
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        {{#if hasImages content}}
+          <div><a href="{{pathFor 'postPage' blogid=this.blog.id }}">{{{getFirstImage content}}}</a></div>
+        {{/if}}
+        <span>{{post_lead}}</span>
+        <a href="{{pathFor 'postPage' blogid=this.blog.id }}">
+          <button type="button" class="btn btn-primary">Leia mais...</button>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div>
+          Votos: <span class="label-as-badge label-default">{{gh_upvote_count id}}</span>
+          <a href="#" class="btn btn-default js-upvote">
+            <span class="glyphicon glyphicon-thumbs-up"></span>
+          </a>
+        </div>
+        <div>
+          <span>{{ getPostLabels labels }}</span>
+        </div>
+        <div>
+          <span>Postado em <span class="date">{{formatDate published}}</span> por <span class="author">{{author.displayName}}</span> em <a href="http://{{domain url}}">{{domain url}}</a></span>
+        </div>
+      </div>
     </div>
-      Votos: <span class="label-as-badge label-default">{{gh_upvote_count id}}</span>
-      <a href="#" class="btn btn-default js-upvote">
-        <span class="glyphicon glyphicon-thumbs-up"></span>
-      </a>
-        <span>{{ getPostLabels labels }}</span>
     <div class="panel-footer">
-      <span>Postado em <span class="date">{{formatDate published}}</span> por <span class="author">{{author.displayName}}</span> em <a href="http://{{domain url}}">{{domain url}}</a></span>
     </div>
   </div>
 </template>

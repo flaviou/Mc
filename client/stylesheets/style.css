@@ -14,7 +14,19 @@
 body {
   background: #eee;
   color: #666666; 
-  padding-top: 70px; }
+  padding-top: 10px;
+  padding-left: 150px; 
+  padding-right: 150px;}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background: #eee;
+    color: #666666; 
+    padding-top: 10px;
+    padding-left: 0; 
+    padding-right: 0;
+  }
+} 
 
 .navbar {
   margin-bottom: 10px; 
@@ -60,7 +72,7 @@ body {
     margin: 7px 12px 0 0;
     float: left; }
   .post .post-content {
-    float: left; }
+    float: left;  }
     .post .post-content h3 {
       margin: 0;
       line-height: 1.4;

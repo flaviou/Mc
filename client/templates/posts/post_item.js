@@ -9,7 +9,7 @@ Template.postItem.helpers({
   },
 */
   post_lead: function() {
-    return this.content.replace(/<(?:.|\n)*?>/gm, '').replace(/&nbsp;/g,'').split(' ').slice(0,30).join(' ').concat('...');
+    return this.content.replace(/<(?:.|\n)*?>/gm, '').replace(/&nbsp;/g,'').split(' ').slice(0,100).join(' ').concat('...');
 //    return jQuery(this.content).text().split(' ').slice(0,30).join(' ').concat('...');
   }
 });
