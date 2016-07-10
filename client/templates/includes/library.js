@@ -46,7 +46,10 @@ Handlebars.registerHelper("getImages", function(html) {
 Handlebars.registerHelper("getPostLabels", function(labels) {
     var tags = "";
     if ((labels) && (labels.length > 0)) {
-      tags = "Tags: " + labels.join(", ");
+      for (var i=0; i < labels.length; i++) {
+        tags = tags + '<span><a href="/tag/' + labels[i] + '"><button type="button" class="btn btn-primary tag">#' + labels[i] + '</button></a></span>';
+//        tags = tags + '<a href="{{pathFor ''postsByTag'' tag=' + labels[i] + '}}">' + labels[i] + '</a>'; 
+      }
     }
     return tags;
 });

@@ -18,6 +18,11 @@ Meteor.publish('posts', function(options, searchTexts) {
   };
 }); 
 
+Meteor.publish('postsByTag', function(options, tag) {
+  var re = new RegExp(tag, 'i');
+  return Posts.find({labels: {$regex: re}}, options);
+});
+
 Meteor.publish('singlePost', function(id) {
   check(id, String);
   return Posts.find({id: id});
